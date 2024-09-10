@@ -9,7 +9,7 @@ from kivy.uix.boxlayout import BoxLayout
 class MyApp(App):
     def build(self):
         text = Label(text="Вітаю в мобільній розробці")
-        btn = Button(text="Не натискай!")
+        btn = Button(text="вихід")
         btn.on_press = self.btn_click
         col = BoxLayout(orientation="vertical")
         col.add_widget(text)
