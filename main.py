@@ -1,23 +1,21 @@
-import kivy
-kivy.require('2.1.0') # replace with your current kivy version !
+from kivy.lang  import Builder
+from kivymd.app import MDApp
+from kivymd.uix.screen import MDScreen
+from kivymd.uix.button import MDRectangleFlatButton
 
-from kivy.app import App
-from kivy.uix.label import Label
-from kivy.uix.button import Button
-from kivy.uix.boxlayout import BoxLayout
 
-class MyApp(App):
+class WeatherScreen(MDScreen):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+
+class LCloudApp(MDApp):
     def build(self):
-        text = Label(text="Вітаю в мобільній розробці")
-        btn = Button(text="вихід")
-        btn.on_press = self.btn_click
-        col = BoxLayout(orientation="vertical")
-        col.add_widget(text)
-        col.add_widget(btn)
-        return col
+        Builder.load_file('style.kv')
+        self.theme_cls.theme_style = "Dark"
+        self.theme_cls.primary_palette = "Purple"
 
-    def btn_click(self):
-        print("А я казав")
-        exit()
-    
-MyApp().run()
+        return WeatherScreen()
+
+
+LCloudApp().run()
