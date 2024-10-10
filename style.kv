@@ -28,7 +28,7 @@
                 id: icon
                 size: ("150sp", "150sp")
                 fit_model: "contain"
-                source: https://openweathermap.org/img/wn/10d@2x.png
+                source: 'https://openweathermap.org/img/wn/10d@2x.png'
             MDLabel:
                 id: temp
                 text: "14°C"
@@ -55,3 +55,23 @@
                 text: "Вітер"
                 font_style: 'H4'
                 halign: 'center'
+            MDFillRoundFlatButton:
+                text: "Дивитися прогноз"
+                pos_hint: {'center_x': 0.5}
+                on_press: root.shjw_forecast()
+            Widget:
+                size_hint_y: None
+                height: "50sp"
+
+
+<ForecastScreen>:
+    MDBoxLayout:
+        orientation: 'vertical'
+        spacing: '20sp'
+        MDTopAppBar:
+            title: "LCloud"
+            left_action_items: [["arrow-left", lambda x: root.back()]]
+        MDBoxLayout:
+            orientation: 'vertical'
+            pos_hint: {'center_x': 0.5}
+            size_hint: 0.9, 0.4
