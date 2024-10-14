@@ -49,17 +49,17 @@ class WeatherScreen(MDScreen):
         self.ids.icon.source = f"https://openweathermap.org/img/wn/{icon}@2x.png"
 
 
-    def show_Forecast(self):
-        self.manager.transmitions.direction = 'right'
-        self.maneger.current = 'forecast'
+    def show_forecast(self):
+        self.manager.transition.direction = 'right'
+        self.manager.current = 'forecast'
 
-class Forecastscrean(MDScreen):
+class ForecastScrean(MDScreen):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         
-        def back(self):
-            self.manager.transition.direction = 'right'
-            self.manager.current = 'home'
+    def back(self):
+        self.manager.transition.direction = 'right'
+        self.manager.current = 'home'
 
 
 class LCloudApp(MDApp):
@@ -68,10 +68,10 @@ class LCloudApp(MDApp):
         self.theme_cls.theme_style = "Dark"
         self.theme_cls.primary_palette = "Purple"
         sm = MDScreenManager()
-        self.weather_screen =WeatherScreen(name='Home')
-        self.forecast_screen = ForecastScreen(name='forecast')
-        sm.add_widget(self.weather_screen_screen)
-        sm.add_widget(self.forecast_screen_screen) 
+        self.weather_screen =WeatherScreen(name='home')
+        self.forecast_screen = ForecastScrean(name='forecast')
+        sm.add_widget(self.weather_screen)
+        sm.add_widget(self.forecast_screen) 
 
-        return WeatherScreen()
+        return sm
 LCloudApp().run()

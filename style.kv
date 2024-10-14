@@ -32,39 +32,39 @@
             MDLabel:
                 id: temp
                 text: "14°C"
-                font_style: 'H1'
+                font_style: 'H2'
                 halign: 'center'
 
             MDLabel:
                 id: desc
                 text: "Ясно"
-                font_style: 'H4'
+                font_style: 'H5'
                 halign: 'center'
             MDLabel:
                 id: humidity
                 text: "Вологість"
-                font_style: 'H4'
+                font_style: 'Body1'
                 halign: 'center'
             MDLabel:
                 id: feels_like
                 text: "Відчуваєтся як"
-                font_style: 'H4'
+                font_style: 'Body1'
                 halign: 'center'
             MDLabel:
                 id: wind
                 text: "Вітер"
-                font_style: 'H4'
+                font_style: 'Body1'
                 halign: 'center'
             MDFillRoundFlatButton:
                 text: "Дивитися прогноз"
                 pos_hint: {'center_x': 0.5}
-                on_press: root.shjw_forecast()
+                on_press: root.show_forecast()
             Widget:
                 size_hint_y: None
                 height: "50sp"
 
 
-<ForecastScreen>:
+<ForecastScrean>:
     MDBoxLayout:
         orientation: 'vertical'
         spacing: '20sp'
