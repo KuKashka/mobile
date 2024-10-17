@@ -26,6 +26,8 @@
             pos_hint: {'center_x': 0.5}
             AsyncImage:
                 id: icon
+                size_hint: None, None
+                pos_hint: {'center_x': 0.5}
                 size: ("150sp", "150sp")
                 fit_model: "contain"
                 source: 'https://openweathermap.org/img/wn/10d@2x.png'
@@ -72,6 +74,37 @@
             title: "LCloud"
             left_action_items: [["arrow-left", lambda x: root.back()]]
         MDBoxLayout:
+            id: weather_list
             orientation: 'vertical'
             pos_hint: {'center_x': 0.5}
             size_hint: 0.9, 0.4
+
+
+<WeatherCard>:
+    padding: 4
+    size_hint: None, None
+    size_y: "100dp"
+    MDBoxLayout:
+        padding: 10
+        AsyncImage:
+            id: icon
+            size_hint: None, None
+            pos_hint: {'center_x': 0.5}
+            size: ("150sp", "150sp")
+            fit_model: "contain"
+            source: 'https://openweathermap.org/img/wn/10d@2x.png'
+            MDLabel:
+                id: temp
+                text: "14°C"
+                font_style: 'H2'
+                halign: 'center'
+            MDLabel:
+                id: desc
+                text: "Ясно"
+                font_style: 'H5'
+                halign: 'center'
+            MDLabel:
+                id: temp
+                text: "14°C"
+                font_style: 'H2'
+                halign: 'center'
